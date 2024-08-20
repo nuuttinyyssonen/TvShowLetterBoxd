@@ -11,9 +11,6 @@ const signupRouter = require('./Controls/signup');
 app.use(express.json());
 app.use(cors());
 
-app.use('/api/login', loginRouter);
-app.use('/api/signup', signupRouter);
-
 mongoose.set('strictQuery', false);
 const connectMongoDB = async () => {
     try {
@@ -24,6 +21,9 @@ const connectMongoDB = async () => {
     }
 }
 connectMongoDB();
+
+app.use('/api/login', loginRouter);
+app.use('/api/signup', signupRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

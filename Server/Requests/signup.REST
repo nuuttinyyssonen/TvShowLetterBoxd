@@ -1,0 +1,8 @@
+POST http://localhost:5000/api/signup
+Content-Type: application/json
+
+{
+    "username": "R4IMO",
+    "password": "secret",
+    "email": "nuutti.nyyssonen@gmail.com"
+}

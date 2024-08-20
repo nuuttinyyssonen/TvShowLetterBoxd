@@ -1,14 +1,14 @@
 import axios from 'axios';
 
-const baseUrl = 'http://localhost:5000/login'
+const baseUrl = 'http://localhost:5000/api/login'
 
 const loginUser = async (user) => {
-    const resposne = await axios.post(baseUrl, user, {
+    const response = await axios.post(baseUrl, user, {
         headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json"
         }
     })
-    return resposne.data
+    return response.data
 };
 
 export default {

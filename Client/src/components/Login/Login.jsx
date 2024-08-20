@@ -1,20 +1,24 @@
 import { useState } from "react";
 import LoginForm from "./LoginForm";
 import loginService from "../../services/loginService";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
+    const navigate = useNavigate();
+
     const handleLogin = async(event) => {
-        event.preventdefault();
+        event.preventDefault();
         try {
             const user = {
-                username: username,
-                password: password
+                username,
+                password
             };
             const response = await loginService.loginUser(user);
-            console.log(response);
+            localStorage.setItem('token', response.token);
+            navigate('/main')
         } catch (error) {
             console.log(error)
         }
