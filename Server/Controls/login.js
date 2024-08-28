@@ -6,11 +6,9 @@ const { SECRET } = require('../utils/config');
 
 loginRouter.post('/',  async (req, res) => {
     const { username, password } = req.body;
-    console.log("here")
 
     const user = await User.findOne({ username });
     const passwordCorrect = user === null ? false : await bcrypt.compare(password, user.passwordHash);
-    console.log(passwordCorrect)
     if (!(user && passwordCorrect)) {
         return res.status(400).json({ error: 'Invalid password or username!' });
     }

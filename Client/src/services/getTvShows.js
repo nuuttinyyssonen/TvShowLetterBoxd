@@ -5,7 +5,6 @@ const baseUrl = "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1
 
 const getTopRatedShows = async() => {
     const response = await axios.get(baseUrl, options.options);
-    console.log(response.data)
     return response.data
 };
 

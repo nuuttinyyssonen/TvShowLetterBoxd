@@ -1,0 +1,25 @@
+body {
+    background-color: #14181c;
+}
+
+.Headline {
+    color: white;
+    text-align: center;
+}
+
+.text {
+    color: white;
+}
+
+.showList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid columns */
+    gap: 20px; /* Space between grid items */
+    padding: 20px; /* Padding around the grid */
+    justify-items: center;
+}
+
+.posterImage {
+    width: 110px;
+    border-radius: 4px;
+}
